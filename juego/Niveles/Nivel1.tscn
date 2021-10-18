@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://juego/personaje/Saltarina.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/plataformas/PlataformaGrass.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/plataformas/PlataformaSnow.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/plataformas/PlataformaLarga.tscn" type="PackedScene" id=4]
+[ext_resource path="res://juego/plataformas/PlataformaCorta.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Background/bg_layer1.png" type="Texture" id=6]
+
+[node name="Nivel1" type="Node"]
+
+[node name="bg_layer1" type="Sprite" parent="."]
+position = Vector2( 1746.02, 509.746 )
+scale = Vector2( 3.75092, 2.2302 )
+texture = ExtResource( 6 )
+
+[node name="Saltarina" parent="." instance=ExtResource( 1 )]
+position = Vector2( 102.689, 694.684 )
+
+[node name="PlataformasNormales" type="Node2D" parent="."]
+
+[node name="PlataformaGrass" parent="PlataformasNormales" instance=ExtResource( 2 )]
+position = Vector2( 1027.1, -81.1549 )
+
+[node name="PlataformaSnow" parent="PlataformasNormales" instance=ExtResource( 3 )]
+position = Vector2( 2792.25, 489.162 )
+
+[node name="PlataformaSnow2" parent="PlataformasNormales" instance=ExtResource( 3 )]
+position = Vector2( 1739.1, -15.8755 )
+
+[node name="PlataformaSnow3" parent="PlataformasNormales" instance=ExtResource( 3 )]
+position = Vector2( 3432.94, 627.785 )
+
+[node name="PlataformasCortas" type="Node2D" parent="."]
+
+[node name="PlataformaCorta4" parent="PlataformasCortas" instance=ExtResource( 5 )]
+position = Vector2( 471.592, 269.914 )
+
+[node name="PlataformaCorta2" parent="PlataformasCortas" instance=ExtResource( 5 )]
+position = Vector2( 1661.97, 620.641 )
+
+[node name="PlataformaCorta5" parent="PlataformasCortas" instance=ExtResource( 5 )]
+position = Vector2( 2189.59, 499.507 )
+
+[node name="PlataformaCorta6" parent="PlataformasCortas" instance=ExtResource( 5 )]
+position = Vector2( 2881.64, 128.407 )
+
+[node name="PlataformaCorta8" parent="PlataformasCortas" instance=ExtResource( 5 )]
+position = Vector2( 2373.3, 41.1798 )
+
+[node name="PlataformaCorta7" parent="PlataformasCortas" instance=ExtResource( 5 )]
+position = Vector2( 3345.86, 311.455 )
+
+[node name="PlataformasLargas" type="Node2D" parent="."]
+
+[node name="PlataformaLargaPiedra" parent="PlataformasLargas" instance=ExtResource( 4 )]
+position = Vector2( 497.874, 760.694 )
+
+[node name="PlataformaLargaPiedra2" parent="PlataformasLargas" instance=ExtResource( 4 )]
+position = Vector2( 2758.55, 804.537 )
