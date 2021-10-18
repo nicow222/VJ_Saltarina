@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Environment/spikes_top.png" type="Texture" id=1]
+[ext_resource path="res://juego/objetos/pinchos.gd" type="Script" id=2]
+
+[node name="pinchos" type="Area2D"]
+z_index = 30
+z_as_relative = false
+collision_layer = 32
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -26.6596, -0.322525, -19.2346, -30.4398, 18.9752, -30.3564, 26.6506, -0.239098 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.870588, 0, 0, 1 )
+position = Vector2( 0, -16.0543 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

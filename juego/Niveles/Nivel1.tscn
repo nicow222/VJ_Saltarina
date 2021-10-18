@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://juego/personaje/Saltarina.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego/plataformas/PlataformaGrass.tscn" type="PackedScene" id=2]
@@ -6,55 +6,87 @@
 [ext_resource path="res://juego/plataformas/PlataformaLarga.tscn" type="PackedScene" id=4]
 [ext_resource path="res://juego/plataformas/PlataformaCorta.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Background/bg_layer1.png" type="Texture" id=6]
+[ext_resource path="res://juego/objetos/pinchos.tscn" type="PackedScene" id=8]
 
 [node name="Nivel1" type="Node"]
 
 [node name="Fondo" type="Sprite" parent="."]
-position = Vector2( 1970.63, 713.163 )
-scale = Vector2( 4.45033, 2.67716 )
+position = Vector2( 1489.26, 334.607 )
+scale = Vector2( 6.00489, 3.38446 )
 texture = ExtResource( 6 )
 
 [node name="Saltarina" parent="." instance=ExtResource( 1 )]
-position = Vector2( 102.689, 694.684 )
+position = Vector2( -170.105, 699.656 )
 
 [node name="PlataformasNormales" type="Node2D" parent="."]
+z_index = 40
+z_as_relative = false
 
 [node name="PlataformaGrass" parent="PlataformasNormales" instance=ExtResource( 2 )]
 position = Vector2( 1027.1, -81.1549 )
+z_index = 0
+z_as_relative = true
 
 [node name="PlataformaSnow" parent="PlataformasNormales" instance=ExtResource( 3 )]
 position = Vector2( 2792.25, 489.162 )
+z_index = 0
+z_as_relative = true
 
 [node name="PlataformaSnow2" parent="PlataformasNormales" instance=ExtResource( 3 )]
 position = Vector2( 1739.1, -15.8755 )
+z_index = 0
+z_as_relative = true
 
 [node name="PlataformaSnow3" parent="PlataformasNormales" instance=ExtResource( 3 )]
 position = Vector2( 3432.94, 627.785 )
+z_index = 0
+z_as_relative = true
 
 [node name="PlataformasCortas" type="Node2D" parent="."]
+z_index = 40
+z_as_relative = false
 
 [node name="PlataformaCorta4" parent="PlataformasCortas" instance=ExtResource( 5 )]
 position = Vector2( 471.592, 269.914 )
+z_index = 0
+z_as_relative = true
 
 [node name="PlataformaCorta2" parent="PlataformasCortas" instance=ExtResource( 5 )]
 position = Vector2( 1661.97, 620.641 )
+z_index = 0
+z_as_relative = true
 
 [node name="PlataformaCorta5" parent="PlataformasCortas" instance=ExtResource( 5 )]
 position = Vector2( 2189.59, 499.507 )
+z_index = 0
+z_as_relative = true
 
 [node name="PlataformaCorta6" parent="PlataformasCortas" instance=ExtResource( 5 )]
 position = Vector2( 2881.64, 128.407 )
+z_index = 0
+z_as_relative = true
 
 [node name="PlataformaCorta8" parent="PlataformasCortas" instance=ExtResource( 5 )]
 position = Vector2( 2373.3, 41.1798 )
+z_index = 0
+z_as_relative = true
 
 [node name="PlataformaCorta7" parent="PlataformasCortas" instance=ExtResource( 5 )]
 position = Vector2( 3345.86, 311.455 )
+z_index = 0
+z_as_relative = true
 
 [node name="PlataformasLargas" type="Node2D" parent="."]
+z_index = 40
+z_as_relative = false
 
 [node name="PlataformaLargaPiedra" parent="PlataformasLargas" instance=ExtResource( 4 )]
-position = Vector2( 497.874, 760.694 )
+position = Vector2( 497.874, 761.194 )
 
 [node name="PlataformaLargaPiedra2" parent="PlataformasLargas" instance=ExtResource( 4 )]
 position = Vector2( 2758.55, 804.537 )
+z_index = 0
+z_as_relative = true
+
+[node name="pinchos" parent="." instance=ExtResource( 8 )]
+position = Vector2( 916.605, 699.914 )

@@ -56,6 +56,7 @@ pausa={
 2d_physics/layer_3="plataforma"
 2d_physics/layer_4="enemigo"
 2d_physics/layer_5="item"
+2d_physics/layer_6="daño"
 
 [physics]
 
