@@ -9,9 +9,9 @@
 
 [node name="Nivel1" type="Node"]
 
-[node name="bg_layer1" type="Sprite" parent="."]
-position = Vector2( 1746.02, 509.746 )
-scale = Vector2( 3.75092, 2.2302 )
+[node name="Fondo" type="Sprite" parent="."]
+position = Vector2( 1970.63, 713.163 )
+scale = Vector2( 4.45033, 2.67716 )
 texture = ExtResource( 6 )
 
 [node name="Saltarina" parent="." instance=ExtResource( 1 )]

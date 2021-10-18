@@ -61,7 +61,7 @@ volume_db = -16.157
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 1.8, 1.8 )
+zoom = Vector2( 1.6, 1.6 )
 limit_left = -2000
 limit_bottom = 2000
 drag_margin_h_enabled = true
