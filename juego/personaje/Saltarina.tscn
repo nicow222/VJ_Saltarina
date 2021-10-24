@@ -14,15 +14,15 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "saltar",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "correr",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "saltar",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -32,7 +32,9 @@ height = 58.2231
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 38.3899, 5.34751 )
 
-[node name="Saltarina" type="KinematicBody2D"]
+[node name="Saltarina" type="KinematicBody2D" groups=[
+"jugador",
+]]
 scale = Vector2( 0.5, 0.5 )
 z_index = 50
 z_as_relative = false

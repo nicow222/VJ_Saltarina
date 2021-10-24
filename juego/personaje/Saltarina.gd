@@ -4,6 +4,7 @@ export var velocidad = Vector2(150.0, 150.0)
 export var acel_caida = 400
 export var fuerza_salto = 3000
 export var fuerza_rebote = 350
+export var impulso = -3800
 
 var movimiento = Vector2.ZERO
 
@@ -41,7 +42,7 @@ func caer():
 	if not is_on_floor():
 		animacion.play("saltar")
 		movimiento.y += acel_caida
-		movimiento.y = clamp(movimiento.y, -fuerza_salto, velocidad.y)
+		movimiento.y = clamp(movimiento.y, impulso, velocidad.y)
 	
 func saltar():
 	if Input.is_action_just_pressed("salto") and is_on_floor():
@@ -53,6 +54,9 @@ func saltar():
 func colision_techo():
 	if is_on_ceiling():
 		movimiento.y = fuerza_rebote
+		
+func impulsar():
+	movimiento.y = impulso 
 
 func caida_al_vacio():
 	if position.y > camara.limit_bottom:
