@@ -1,9 +1,12 @@
 extends Area2D
 
-var esta_activado = false
 export var proximo_nivel = ""
 
+var esta_activado = false
+
+
 func _ready():
+# warning-ignore:return_value_discarded
 	get_parent().connect("abrir_portal", self, "play_animacion")
 
 func _on_body_entered(body):
@@ -13,6 +16,7 @@ func _on_body_entered(body):
 		cambiar_nivel()
 		
 func cambiar_nivel():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(proximo_nivel)
 
 func play_animacion():

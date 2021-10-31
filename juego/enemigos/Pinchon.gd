@@ -9,10 +9,11 @@ onready var animacion = $AnimatedSprite
 onready var detector_vacio = $DetectorVacio
 onready var detector_pared = $DetectorPared
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	caer()
 	caminar()
 	
+# warning-ignore:return_value_discarded
 	move_and_slide(movimiento, Vector2.UP)
 	
 func caer():

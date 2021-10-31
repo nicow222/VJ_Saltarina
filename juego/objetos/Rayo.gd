@@ -3,9 +3,9 @@ extends Area2D
 
 export var velocidad = 400.0
 
-onready var animacion = $AnimatedSprite
-
 var mi_pos = Vector2.ZERO
+
+onready var animacion = $AnimatedSprite
 
 func crear(pos):
 	mi_pos = pos

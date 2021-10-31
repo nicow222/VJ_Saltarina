@@ -13,6 +13,7 @@ var aceleracion_caida_original
 var puede_moverse = true
 
 
+
 func _ready():
 	animacion_personaje.play("aclarar")
 	fuerza_salto_original = fuerza_salto
@@ -28,6 +29,7 @@ onready var enfriamiento_power_up_volar = $EnfriamientoPowerUpVolar
 onready var animacion_personaje = $AnimationPlayer
 
 
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	
 	movimiento.x = velocidad.x * tomar_direccion()
@@ -37,6 +39,7 @@ func _physics_process(delta):
 	colision_techo()
 	caida_al_vacio()
 		
+# warning-ignore:return_value_discarded
 	move_and_slide(movimiento, Vector2.UP)
 	
 	
@@ -94,8 +97,11 @@ func caida_al_vacio():
 		respawn()
 
 func respawn():
+	DatosPlayer.restar_vidas()
 	animacion_personaje.play("oscurecer")
-	get_tree().reload_current_scene()
+	if DatosPlayer.vidas >= 1:
+# warning-ignore:return_value_discarded
+		get_tree().reload_current_scene()
 		
 
 

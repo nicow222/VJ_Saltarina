@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/objetos/ZanahoriaLlave.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/objetos/Portal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/personaje/Saltarina.tscn" type="PackedScene" id=4]
+[ext_resource path="res://juego/plataformas/PlataformaLarga.tscn" type="PackedScene" id=5]
+
+[node name="Nivel1_v2" instance=ExtResource( 1 )]
+nivel_actual = "res://juego/Niveles/Nivel1.tscn"
+
+[node name="PlataformaLargaPiedra" parent="PlataformasLargas" index="0" instance=ExtResource( 5 )]
+position = Vector2( 663.191, 626.154 )
+
+[node name="ZanahoriaLlave" parent="Zanahorias" index="0" instance=ExtResource( 2 )]
+position = Vector2( 387.326, 538.129 )
+
+[node name="Portal" parent="." index="11" instance=ExtResource( 3 )]
+position = Vector2( 954.028, 514.318 )
+proximo_nivel = "res://juego/Niveles/Nivel2.tscn"
+
+[node name="Saltarina" parent="." index="12" instance=ExtResource( 4 )]
+position = Vector2( 679.408, 588.926 )

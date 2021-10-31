@@ -9,6 +9,6 @@ func _on_body_entered(body):
 	animacion.play("consumir")
 	
 	
-func aplciar_power_up(body):
+func aplciar_power_up(_body):
 	pass
 	

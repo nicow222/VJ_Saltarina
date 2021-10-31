@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://juego/personaje/Saltarina.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego/plataformas/PlataformaGrass.tscn" type="PackedScene" id=2]
@@ -12,7 +12,7 @@
 [ext_resource path="res://juego/enemigos/Nubon.tscn" type="PackedScene" id=10]
 [ext_resource path="res://juego/objetos/MonedaPlata.tscn" type="PackedScene" id=11]
 [ext_resource path="res://juego/objetos/MonedaBronze.tscn" type="PackedScene" id=12]
-[ext_resource path="res://juego/objetos/PlataformaImpulsora.tscn" type="PackedScene" id=13]
+[ext_resource path="res://juego/menus/MenuPausa.tscn" type="PackedScene" id=13]
 [ext_resource path="res://juego/objetos/power_up/PowerUpVolar.tscn" type="PackedScene" id=14]
 [ext_resource path="res://juego/objetos/PlataformaTrampa.tscn" type="PackedScene" id=15]
 [ext_resource path="res://juego/plataformas/PlataformaChico.tscn" type="PackedScene" id=16]
@@ -23,9 +23,11 @@
 [ext_resource path="res://Assets/Background/bg_layer2.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Background/bg_layer3.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Background/bg_layer4.png" type="Texture" id=23]
+[ext_resource path="res://juego/Interfaz/HUD.tscn" type="PackedScene" id=24]
 
 [node name="Nivel1" type="Node"]
 script = ExtResource( 20 )
+nivel_actual = "res://juego/Niveles/Nivel1.tscn"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_offset = Vector2( 0, -350 )
@@ -77,16 +79,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CapaFrente" type="CanvasLayer" parent="."]
+
+[node name="MenuPausa" parent="CapaFrente" instance=ExtResource( 13 )]
+visible = false
+
+[node name="HUD" parent="CapaFrente" instance=ExtResource( 24 )]
+
 [node name="Saltarina" parent="." instance=ExtResource( 1 )]
-position = Vector2( -254.342, 721.592 )
+position = Vector2( 140.765, 726.082 )
 
 [node name="enemigos" type="Node" parent="."]
 
 [node name="Pinchon" parent="enemigos" instance=ExtResource( 7 )]
 position = Vector2( 2283.54, 461.66 )
-
-[node name="Pinchon2" parent="enemigos" instance=ExtResource( 7 )]
-position = Vector2( -986.782, 727.07 )
 
 [node name="Volon" parent="enemigos" instance=ExtResource( 9 )]
 position = Vector2( 1298.98, 637.52 )
@@ -104,10 +110,6 @@ position = Vector2( 1230.08, -528.942 )
 
 [node name="PlataformaLargaPiedra" parent="PlataformasLargas" instance=ExtResource( 4 )]
 position = Vector2( 498.668, 760.864 )
-
-[node name="PlataformaLargaPiedra2" parent="PlataformasLargas" instance=ExtResource( 4 )]
-position = Vector2( -2024.29, 964.511 )
-scale = Vector2( 10, 0.8 )
 
 [node name="PlataformasCortas" type="Node" parent="."]
 
@@ -132,18 +134,13 @@ z_index = 0
 z_as_relative = true
 
 [node name="PlataformaChico" parent="PlataformasCortas" instance=ExtResource( 16 )]
-position = Vector2( -472.722, 395.568 )
+position = Vector2( 739.537, 586.386 )
 z_index = 29
 
 [node name="PlataformasNormal" type="Node" parent="."]
 
 [node name="PlataformaGrass" parent="PlataformasNormal" instance=ExtResource( 2 )]
 position = Vector2( 1818.81, 725.019 )
-z_index = 0
-z_as_relative = true
-
-[node name="PlataformaGrass2" parent="PlataformasNormal" instance=ExtResource( 2 )]
-position = Vector2( -474.688, 770.112 )
 z_index = 0
 z_as_relative = true
 
@@ -171,27 +168,25 @@ position = Vector2( 1019.45, 579.888 )
 [node name="Zanahorias" type="Node" parent="."]
 
 [node name="ZanahoriaLlave" parent="Zanahorias" instance=ExtResource( 19 )]
-position = Vector2( -359.188, 685.301 )
+position = Vector2( -289.595, 667.342 )
 
 [node name="ZanahoriaLlave2" parent="Zanahorias" instance=ExtResource( 19 )]
-position = Vector2( -362.185, 535.47 )
+position = Vector2( -196.06, 667.921 )
 
-[node name="PlataformaImpulsora" parent="." instance=ExtResource( 13 )]
-position = Vector2( 483.249, 724.175 )
+[node name="Pinchos" type="Node" parent="."]
 
-[node name="PlataformaImpulsora2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1211.11, 19.5156 )
+[node name="pinchos" parent="Pinchos" instance=ExtResource( 17 )]
+position = Vector2( 738.951, 606.375 )
+es_trampa = true
+
+[node name="PlataformasTrampa" type="Node" parent="."]
 
 [node name="PowerUpVolar" parent="." instance=ExtResource( 14 )]
 position = Vector2( 888.21, 651.352 )
 
 [node name="PlataformaTrampa" parent="." instance=ExtResource( 15 )]
-position = Vector2( -899.44, 755.19 )
-
-[node name="pinchos" parent="." instance=ExtResource( 17 )]
-position = Vector2( -473.308, 415.557 )
-es_trampa = true
+position = Vector2( -243.922, 750.7 )
 
 [node name="Portal" parent="." instance=ExtResource( 18 )]
-position = Vector2( 5.09448, 650.616 )
+position = Vector2( 359.792, 17.5475 )
 proximo_nivel = "res://juego/Niveles/NivelTemporal.tscn"

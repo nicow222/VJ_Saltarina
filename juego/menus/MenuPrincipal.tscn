@@ -1,0 +1,264 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://juego/menus/BotonSalir.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Players/bunny2_ready.png" type="Texture" id=2]
+[ext_resource path="res://juego/menus/botones/BotonMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Environment/ground_grass.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Players/bunny2_jump.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Background/bg_layer2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Background/bg_layer3.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Background/bg_layer4.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Background/bg_layer1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Fonts/SimsLLHP.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://juego/menus/MenuPrincipal.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Fonts/Triforce.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="Animation" id=8]
+resource_name = "animacion_menu"
+length = 2.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("bunny2_ready:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.4, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bunny2_jump:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.4, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bunny2_jump:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.4, 1.7, 2.3, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 333.834, 456.614 ), Vector2( 333.834, 168.939 ), Vector2( 333.834, 170.438 ), Vector2( 333.834, 456.614 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bunny2_jump:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.4, 1.7, 1.9, 2.1, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -180.0, -360.0, -360.0 ]
+}
+
+[sub_resource type="DynamicFont" id=11]
+size = 35
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.00784314, 0.0352941, 0.188235, 1 )
+border_width_left = 4
+border_width_bottom = 5
+border_color = Color( 0.615686, 0.627451, 0.788235, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.00784314, 0.0352941, 0.188235, 1 )
+border_width_left = 4
+border_width_right = 4
+border_width_bottom = 5
+border_color = Color( 0.0980392, 0.12549, 0.458824, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.00784314, 0.0352941, 0.188235, 1 )
+border_width_bottom = 5
+border_color = Color( 0.615686, 0.627451, 0.788235, 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 35
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 80
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[node name="MenuPrincipal" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.35022
+margin_top = 0.834625
+margin_right = 1.35022
+margin_bottom = 0.834717
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, -350 )
+
+[node name="ParallaxFondo" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxFondo"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesLejanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesLejanas"]
+margin_top = -660.712
+margin_right = 2048.0
+margin_bottom = 1387.29
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesMedias" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesMedias"]
+margin_top = -906.119
+margin_right = 2048.0
+margin_bottom = 1141.88
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesCercanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesCercanas"]
+margin_top = -921.221
+margin_right = 2048.0
+margin_bottom = 1126.78
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0666667, 0.52549, 0.607843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ground_grass" type="Sprite" parent="."]
+position = Vector2( 341.903, 603.227 )
+texture = ExtResource( 4 )
+
+[node name="bunny2_ready" type="Sprite" parent="."]
+position = Vector2( 333.915, 461.538 )
+texture = ExtResource( 2 )
+
+[node name="bunny2_jump" type="Sprite" parent="."]
+visible = false
+position = Vector2( 333.834, 456.614 )
+rotation = -6.28319
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "animacion_menu"
+anims/animacion_menu = SubResource( 8 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -465.42
+margin_top = -112.455
+margin_right = -198.42
+margin_bottom = 206.545
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonIniciar" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_right = 267.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 11 )
+text = "Iniciar Juego"
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer"]
+margin_top = 167.0
+margin_right = 267.0
+margin_bottom = 319.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 10 )
+text = "Salir"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 705.172
+margin_top = 40.2721
+margin_right = 1233.17
+margin_bottom = 134.272
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+modulate = Color( 0.733276, 0.257813, 1, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -247.046
+margin_top = -42.091
+margin_right = 273.954
+margin_bottom = 58.909
+custom_fonts/font = SubResource( 12 )
+text = "Menu Principal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/BotonIniciar" to="." method="_on_BotonIniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonSalir" to="VBoxContainer/BotonSalir" method="_on_pressed"]

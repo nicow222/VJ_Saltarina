@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 
-func _on_DetectorPersonaje_body_entered(body):
+func _on_DetectorPersonaje_body_entered(_body):
 	$DetectorPersonaje/CollisionShape2D.set_deferred("disabled", true)
 	$AnimationPlayer.play("caer")
 	
