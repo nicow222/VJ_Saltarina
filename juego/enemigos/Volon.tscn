@@ -20,7 +20,7 @@ animations = [ {
 extents = Vector2( 32.7812, 24.1094 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 38.6742, 5.6451 )
+extents = Vector2( 42.0068, 8.17505 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "morir"
@@ -161,7 +161,7 @@ anims/volar = SubResource( 5 )
 
 [node name="Morir" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -28.327
+volume_db = -36.405
 bus = "SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_Volon_body_entered"]

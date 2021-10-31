@@ -1,7 +1,68 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Environment/spikes_top.png" type="Texture" id=1]
 [ext_resource path="res://juego/objetos/pinchos.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sfx/PinchoTrampa.wav" type="AudioStream" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "caer"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -16 ), Vector2( -3, -16 ), Vector2( 3, -16 ), Vector2( -4, -16 ), Vector2( 4, -16 ), Vector2( 0, -250 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Colisionador:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -234.142 ) ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}, {
+"end_offset": 0.145211,
+"start_offset": 0.08,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0.4, 0.401 )
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
 
 [node name="pinchos" type="Area2D"]
 z_index = 30
@@ -10,13 +71,25 @@ collision_layer = 32
 collision_mask = 2
 script = ExtResource( 2 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -26.6596, -0.322525, -19.2346, -30.4398, 18.9752, -30.3564, 26.6506, -0.239098 )
-
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.870588, 0, 0, 1 )
-position = Vector2( 0, -16.0543 )
+position = Vector2( 0, -16 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 1 )
+
+[node name="Colisionador" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -26.6596, -0.322525, -19.2346, -30.4398, 18.9752, -30.3564, 26.6506, -0.239098 )
+
+[node name="DetectorPersonaje" type="RayCast2D" parent="."]
+cast_to = Vector2( 0, -350 )
+collision_mask = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/caer = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -22.713
+bus = "SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

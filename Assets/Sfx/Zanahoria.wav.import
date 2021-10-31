@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Zanahoria.wav-1c8674f66d61a053dcb8619a44545e52.sample"
+
+[deps]
+
+source_file="res://Assets/Sfx/Zanahoria.wav"
+dest_files=[ "res://.import/Zanahoria.wav-1c8674f66d61a053dcb8619a44545e52.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
