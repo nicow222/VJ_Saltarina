@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://PowerUpVolar.gd" type="Script" id=1]
+[ext_resource path="res://juego/objetos/power_up/PowerUpVolar.gd" type="Script" id=1]
 [ext_resource path="res://juego/objetos/power_up/PowerUpBase.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Items/powerup_wings.png" type="Texture" id=3]
 
