@@ -11,12 +11,13 @@ config_version=4
 [application]
 
 config/name="Vj Saltarina"
-run/main_scene="res://juego/Niveles/Nivel1.tscn"
+run/main_scene="res://juego/menus/MenuPrincipal.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 DatosPlayer="*res://juego/autoloads/DatosPlayer.gd"
+MusicaGlobal="*res://juego/autoloads/MusicaGlobal/MusicaGlobal.tscn"
 
 [display]
 

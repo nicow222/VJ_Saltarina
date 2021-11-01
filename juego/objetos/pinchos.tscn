@@ -6,7 +6,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "caer"
-length = 0.6
+length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:position")
 tracks/0/interp = 1
@@ -14,10 +14,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -16 ), Vector2( -3, -16 ), Vector2( 3, -16 ), Vector2( -4, -16 ), Vector2( 4, -16 ), Vector2( 0, -250 ) ]
+"values": [ Vector2( 0, -16 ), Vector2( -3, -16 ), Vector2( 3, -16 ), Vector2( -4, -16 ), Vector2( 4, -16 ), Vector2( 0, -270 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Colisionador:position")
@@ -26,10 +26,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.4, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -234.142 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -254.142 ) ]
 }
 tracks/2/type = "audio"
 tracks/2/path = NodePath("AudioStreamPlayer")
@@ -56,7 +56,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.6 ),
+"times": PoolRealArray( 0.7 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -73,7 +73,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.870588, 0, 0, 1 )
-position = Vector2( 0, -16 )
+position = Vector2( -3, -16 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 1 )
 

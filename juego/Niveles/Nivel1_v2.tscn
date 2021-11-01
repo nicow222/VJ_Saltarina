@@ -11,13 +11,17 @@ nivel_actual = "res://juego/Niveles/Nivel1.tscn"
 
 [node name="PlataformaLargaPiedra" parent="PlataformasLargas" index="0" instance=ExtResource( 5 )]
 position = Vector2( 663.191, 626.154 )
+scale = Vector2( 2, 0.8 )
 
 [node name="ZanahoriaLlave" parent="Zanahorias" index="0" instance=ExtResource( 2 )]
-position = Vector2( 387.326, 538.129 )
+position = Vector2( 319.182, 542.562 )
+
+[node name="ZanahoriaLlave2" parent="Zanahorias" index="1" instance=ExtResource( 2 )]
+position = Vector2( 911.696, 540.61 )
 
 [node name="Portal" parent="." index="11" instance=ExtResource( 3 )]
-position = Vector2( 954.028, 514.318 )
+position = Vector2( 679.528, 522.339 )
 proximo_nivel = "res://juego/Niveles/Nivel2.tscn"
 
 [node name="Saltarina" parent="." index="12" instance=ExtResource( 4 )]
-position = Vector2( 679.408, 588.926 )
+position = Vector2( 515.482, 588.648 )

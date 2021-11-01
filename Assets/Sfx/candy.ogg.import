@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/candy.ogg-23ea15471e533a9f0018d934194b1f62.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/candy.ogg"
+dest_files=[ "res://.import/candy.ogg-23ea15471e533a9f0018d934194b1f62.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
